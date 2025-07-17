@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Grocery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Urban Grocery</h1>
+        <div class="cart-container">
+            <button>Cart</button>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+    <main>
+        <div class="filter-container">
+            <input type="text" placeholder="Search products...">
+            <select>
+                <option value="all">All Categories</option>
+                <option value="fruits">Fruits</option>
+                <option value="vegetables">Vegetables</option>
+                <option value="dairy">Dairy</option>
+            </select>
+        </div>
+        <div class="product-grid">
+            </div>
+    </main>
+    <div class="cart-modal-overlay">
+        <div class="cart-modal">
+            <h2>Your Cart</h2>
+            <div class="cart-items"></div>
+            <button class="close-cart-btn">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
