@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Urban Grocery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Urban Grocery</h1>
-        <div class="cart-container">
-            <button>Cart</button>
-            <span class="cart-count">0</span>
+        <div class="header-links">
+            <a href="login.html">Login</a>
+            <div class="cart-container">
+                <button>Cart</button>
+                <span class="cart-count">0</span>
+            </div>
         </div>
     </header>
     <main>
@@ -32,6 +38,7 @@
             <h2>Your Cart</h2>
             <div class="cart-items"></div>
             <button class="close-cart-btn">Close</button>
+            <a href="checkout.html" class="checkout-btn">Checkout</a>
         </div>
     </div>
     <script src="script.js"></script>

@@ -1,11 +1,13 @@
 const products = [
-    { id: 1, name: 'Organic Bananas', category: 'fruits', price: 1.29, image: 'images/bananas.jpg', expressDelivery: true },
-    { id: 2, name: 'Free-Range Eggs', category: 'dairy', price: 3.99, image: 'images/eggs.jpg', expressDelivery: false },
-    { id: 3, name: 'Avocado', category: 'fruits', price: 2.49, image: 'images/avocado.jpg', expressDelivery: true },
-    { id: 4, name: 'Organic Spinach', category: 'vegetables', price: 4.99, image: 'images/spinach.jpg', expressDelivery: true },
-    { id: 5, name: 'Almond Milk', category: 'dairy', price: 3.49, image: 'images/almond-milk.jpg', expressDelivery: false },
-    { id: 6, name: 'Whole Wheat Bread', category: 'bakery', price: 2.99, image: 'images/bread.jpg', expressDelivery: true },
+    { id: 1, name: 'Organic Bananas', category: 'fruits', price: 1.29, image: 'images/bananas.jpg', expressDelivery: true, description: 'A bunch of ripe, organic bananas.' },
+    { id: 2, name: 'Free-Range Eggs', category: 'dairy', price: 3.99, image: 'images/eggs.jpg', expressDelivery: false, description: 'A dozen fresh, free-range eggs.' },
+    { id: 3, name: 'Avocado', category: 'fruits', price: 2.49, image: 'images/avocado.jpg', expressDelivery: true, description: 'A ripe and creamy avocado.' },
+    { id: 4, name: 'Organic Spinach', category: 'vegetables', price: 4.99, image: 'images/spinach.jpg', expressDelivery: true, description: 'A bag of fresh, organic spinach.' },
+    { id: 5, name: 'Almond Milk', category: 'dairy', price: 3.49, image: 'images/almond-milk.jpg', expressDelivery: false, description: 'A carton of unsweetened almond milk.' },
+    { id: 6, name: 'Whole Wheat Bread', category: 'bakery', price: 2.99, image: 'images/bread.jpg', expressDelivery: true, description: 'A loaf of freshly baked whole wheat bread.' },
 ];
+
+localStorage.setItem('products', JSON.stringify(products));
 
 const productGrid = document.querySelector('.product-grid');
 
@@ -16,11 +18,13 @@ function displayProducts(productsToDisplay) {
         productCard.classList.add('product-card');
         productCard.dataset.id = product.id;
         productCard.innerHTML = `
-            ${product.expressDelivery ? '<span class="express-delivery">Express</span>' : ''}
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p class="price">$${product.price.toFixed(2)}</p>
-            <button>Add to Cart</button>
+            <a href="product.html?id=${product.id}">
+                ${product.expressDelivery ? '<span class="express-delivery">Express</span>' : ''}
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p class="price">$${product.price.toFixed(2)}</p>
+            </a>
+            <button data-id="${product.id}">Add to Cart</button>
         `;
         productGrid.appendChild(productCard);
     });

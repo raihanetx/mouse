@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">Urban Grocery</a></h1>
+    </header>
+    <main class="checkout-container">
+        <div class="checkout-steps">
+            <div class="step active">Shipping</div>
+            <div class="step">Payment</div>
+            <div class="step">Confirmation</div>
+        </div>
+        <div class="checkout-content">
+            <div class="shipping-details">
+                <h2>Shipping Details</h2>
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="text" placeholder="Address" required>
+                    <input type="text" placeholder="City" required>
+                    <input type="text" placeholder="State" required>
+                    <input type="text" placeholder="Zip Code" required>
+                    <button type="button" class="next-step-btn">Next</button>
+                </form>
+            </div>
+            <div class="payment-details" style="display: none;">
+                <h2>Payment Details</h2>
+                <form>
+                    <input type="text" placeholder="Card Number" required>
+                    <input type="text" placeholder="Cardholder Name" required>
+                    <input type="text" placeholder="Expiration Date (MM/YY)" required>
+                    <input type="text" placeholder="CVV" required>
+                    <button type="button" class="next-step-btn">Pay Now</button>
+                </form>
+            </div>
+            <div class="order-confirmation" style="display: none;">
+                <h2>Order Confirmed!</h2>
+                <p>Thank you for your purchase.</p>
+            </div>
+        </div>
+    </main>
+    <script src="checkout.js"></script>
+</body>
+</html>
